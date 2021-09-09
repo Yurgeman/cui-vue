@@ -1,0 +1,42 @@
+@import "../../mixins/mixins"
+@import "../../var"
+
+.cui-frame-group-menu
+  //width: max-content
+  padding:  0 var(--cui-margin) var(--cui-margin) var(--cui-margin)
+  height: 100%
+  overflow-y: hidden
+  overflow-x: auto
+  width: auto
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  flex-basis: max-content
+  flex-flow: column wrap
+  gap: var(--cui-margin-small)
+  justify-content: flex-start
+  align-items: flex-start
+
+.cui-frame-group-menu-item
+  background-color: var(--cui-color-backgroung-emphatic)
+  border-radius: var(--cui-border-radius)
+  padding-bottom: var(--cui-margin-small)
+  width: 240px
+  flex: none
+  align-self: flex-start
+  justify-self: flex-start
+
+  &__name
+    text-align: right
+    font-weight: bold
+    border-bottom: border()
+    padding: var(--cui-margin-small) var(--cui-margin)
+
+  &__nav
+    cursor: pointer
+    line-height: 1.3
+    color: var(--cui-color-text-muted)
+    padding: var(--cui-margin-xsmall) var(--cui-margin)
+
+    &:hover
+      color: var(--cui-color-warning-500)

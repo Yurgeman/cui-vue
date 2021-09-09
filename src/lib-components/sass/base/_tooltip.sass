@@ -1,0 +1,51 @@
+@import "../var"
+@import "../mixins"
+
+.cui-tooltip
+  position: relative
+
+  &.success
+    &::before
+      background-color: $color-success-500
+
+  &.warning
+    &::before
+      background-color: $color-warning-600
+      color: $color-success-700
+
+  &.info
+    &::before
+      background-color: $color-info-500
+
+  &.danger
+    &::before
+      background-color: $color-danger-500
+
+  &.right
+    &::before
+      left: auto
+      right: 0
+
+  &::before
+    z-index: 1000
+    hyphens: auto
+    display: none
+    content: attr(data-tooltip)
+    position: absolute
+    bottom: calc(100% + 5px)
+    padding: var(--cui-margin-xsmall) var(--cui-margin-small)
+    background-color: $color-primary-500
+    color: $color-inverse
+    border-radius: $border-radius
+    font-size: .8rem
+    font-weight: normal
+    line-height: 1.2
+    max-width: 250px
+    left: 0
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+  &:hover
+    &::before
+      display: block

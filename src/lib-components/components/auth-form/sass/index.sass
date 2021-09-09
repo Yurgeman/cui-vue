@@ -1,0 +1,55 @@
+@import "../../../sass/var"
+@import "../../../sass/mixins"
+
+$backDrop:  blur(4px)
+
+.cui-auth
+  overflow: hidden
+  box-shadow: $shadow-xlarge
+  border-radius: calc(var(--cui-border-radius) * 2)
+  width: 400px
+  max-width: calc(100% - var(--cui-margin-large))
+  margin: var(--cui-margin-large)
+
+  &__body
+    padding: var(--cui-margin-large)
+    background-color: var(--cui-color-backgroung)
+    backdrop-filter: $backDrop
+
+  &__footer,
+  &__header
+    background-color: var(--cui-color-backgroung)
+    padding: var(--cui-margin) var(--cui-margin-large)
+    backdrop-filter: $backDrop
+
+  &__header
+    display: flex
+    justify-content: center
+    padding-bottom: 0
+
+  &__footer
+    background-color: var(--cui-color-backgroung-muted)
+    display: flex
+    gap: var(--cui-margin-large)
+    justify-content: center
+    overflow: hidden
+
+  &__footer-link
+    font-size: .9rem
+    @include ellipsis
+    text-decoration: none
+    color: var(--cui-color-text-muted)
+    border-bottom: 1px dashed transparent
+
+    &:hover
+      color: var(--cui-color-link)
+      text-decoration: none
+
+    &--active
+      color: var(--cui-color-link)
+      border-bottom-color: transparent
+
+    &:not(&--active)
+      &:hover
+        border-bottom-color: var(--cui-color-text)
+        color: var(--cui-color-text)

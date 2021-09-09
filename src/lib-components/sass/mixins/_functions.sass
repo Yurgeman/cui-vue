@@ -1,0 +1,38 @@
+@import "mixins"
+
+@function str-replace($string, $search, $replace: '')
+  $index: str-index($string, $search)
+  @if $index
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+  @return $string
+
+
+@function replaceVar($color)
+  $color: str-replace($color, 'var(', '')
+  $color: str-replace($color, ')', '')
+  @return $color
+
+@function alpha($property, $color-variable, $opacity)
+  $color: replaceVar($color-variable)
+  $color-variable-h: var(#{$color-variable+'-h'})
+  $color-variable-s: var(#{$color-variable+'-s'})
+  $color-variable-l: var(#{$color-variable+'-l'})
+  @return hsla($color-variable-h, $color-variable-s, $color-variable-l, $opacity)
+
+@function HexToRGB($hex)
+  @return red($hex), green($hex), blue($hex)
+
+@function saturationHSL($color, $saturationMultiplier)
+  $color: replaceVar($color)
+  $color-h: var(#{$color+'-h'})
+  $color-s: var(#{$color+'-s'})
+  $color-l: var(#{$color+'-l'})
+  @return hsl($color-h, calc(#{$color-s} * #{$saturationMultiplier}), $color-l)
+
+@function lightenHSL($color, $lightenMultiplier)
+  $color: replaceVar($color)
+  $color-h: var(#{$color+'-h'})
+  $color-s: var(#{$color+'-s'})
+  $color-l: var(#{$color+'-l'})
+  @debug $color-h, $color-s, $color-l
+  @return hsl($color-h, $color-s, calc(#{$color-l} * #{$lightenMultiplier}))

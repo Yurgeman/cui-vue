@@ -1,0 +1,15 @@
+@import "sidebar"
+@import "group-menu"
+@import "single-menu"
+@import "sidebar-nav"
+@import "body-sidebar"
+@import "body"
+@import "header"
+
+.cui-frame
+  height: 100%
+  overflow: hidden
+  display: grid
+  grid-template-columns: auto 1fr
+  grid-template-rows: auto 1fr
+  grid-template-areas: "side header" "side body"

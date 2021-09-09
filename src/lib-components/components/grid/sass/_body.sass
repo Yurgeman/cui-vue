@@ -1,0 +1,67 @@
+@import "var"
+@import "../../../sass/mixins"
+
+.cui-grid-cell
+  line-height: 1.2
+  font-size: .9rem
+  display: flex
+  min-height: $column-height
+  gap: var(--cui-margin-small)
+
+  &--hover
+    background-color: var(--cui-color-backgroung-muted)
+
+  &--checked
+    background-color: var(--cui-color-success-100)
+    @media screen and (prefers-color-scheme: dark)
+      background-color: var(--cui-color-success-900)
+
+  &__label
+    flex: 1
+    min-width: 0
+
+  &__text,
+  &__email,
+  &__phone,
+  &__date-time,
+  &__date,
+  &__time,
+  &__link,
+  &__index,
+  &__number
+    padding: $column-padding
+    align-items: center
+
+  &__email,
+  &__phone,
+  &__date-time,
+  &__date,
+  &__time,
+  &__number
+    & > .cui-grid-cell__label
+      @include ellipsis
+
+  &__index
+    text-align: right
+
+  &__text
+    overflow: hidden
+
+    & > .cui-grid-cell__label
+      @include ellipsisRows(2)
+
+  /**  status
+
+
+  &__status
+    padding: $column-padding
+    align-items: center
+
+  &__status-indicator
+    width: var(--cui-font-size)
+    height: var(--cui-font-size)
+    border-radius: 500px
+    background-color: var(--cui-color-text-muted)
+
+  &__status-label
+    white-space: nowrap

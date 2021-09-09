@@ -1,0 +1,44 @@
+@import "../../mixins/mixins"
+@import "../../var"
+
+.cui-frame-body-sidebar
+  transform-origin: left center
+  height: 100%
+  position: absolute
+  left: 0
+  min-width: 240px
+  max-width: 100%
+  overflow: hidden
+  top: 0
+  bottom: 0
+  background-color: var(--cui-color-backgroung)
+  box-shadow: $shadow-xsmall
+  z-index: var(--cui-z-index)
+  display: grid
+  grid-template-rows: auto 1fr
+
+  &__header
+    max-width: 100%
+    display: flex
+    gap: var(--cui-margin-small)
+    padding: var(--cui-margin)
+    align-items: center
+
+  &__close
+    flex: none
+    padding: var(--cui-margin-small)
+    background-color: var(--cui-color-backgroung-muted)
+    border-radius: var(--cui-border-radius)
+    color: var(--cui-color-text-muted)
+    @include flex-center
+
+    &:hover
+      color: var(--cui-color-warnig-500)
+      background-color: var(--cui-color-backgroung)
+
+  &__content
+    max-width: 100%
+    overflow-x: auto
+    overflow-y: hidden
+    min-height: 100px
+    display: grid

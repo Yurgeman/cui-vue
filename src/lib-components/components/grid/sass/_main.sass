@@ -1,0 +1,36 @@
+@import "var"
+@import "../../../sass/mixins"
+
+.cui-grid-outer
+  height: 100%
+  overflow-x: auto
+  overflow-y: hidden
+  position: relative
+
+.cui-grid
+  padding: 0
+  margin: 0
+  max-height: 100%
+  overflow-y: auto
+  display: grid
+  grid-row-gap: var(--cui-border-width)
+  background-color: var(--cui-color-border)
+
+  thead, tbody, tfoot, tr
+    display: contents
+
+  &__caption
+    background-color: var(--cui-color-backgroung-emphatic)
+    padding: var(--cui-margin-small)
+    font-size: 1.2rem
+    border-top: border()
+    border-bottom: border()
+    text-align: left
+
+  &--h-gap
+    grid-column-gap: var(--cui-border-width)
+
+.cui-grid-header,
+.cui-grid-footer,
+.cui-grid-cell
+  background-color: var(--cui-color-backgroung-emphatic)

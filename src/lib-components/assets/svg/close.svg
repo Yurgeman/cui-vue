@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 0 33 32">
+  <defs/>
+  <g transform="translate(-58.007)">
+    <path fill="none" d="M59 0h32v32H59z"/>
+    <clipPath id="a">
+      <path d="M59 0h32v32H59z"/>
+    </clipPath>
+    <g clip-path="url(#a)">
+      <path fill="none" stroke="currentColor" stroke-width="4" d="M61 2l28 28M89 2L61 30"/>
+    </g>
+  </g>
+</svg>

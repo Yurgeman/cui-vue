@@ -1,0 +1,158 @@
+@import "../var"
+@import "../mixins"
+
+.cui-button
+  display: inline-flex
+  border: var(--cui-border-width) solid var(--cui-color-border)
+  padding: 0 var(--cui-margin)
+  line-height: calc(var(--cui-control-height) - (var(--cui-border-width) * 2))
+  border-radius: var(--cui-border-radius)
+  height: var(--cui-control-height)
+  box-sizing: border-box
+  @include ellipsis
+  align-items: center
+  justify-content: center
+  text-decoration: none
+  background-color: var(--cui-color-backgroung-muted)
+  font-size: .95rem
+
+
+  & > *
+    &:not(:last-child)
+      margin-right: var(--cui-margin-small)
+
+  &.icon
+    display: flex
+    align-items: center
+    justify-content: center
+    width: var(--cui-control-height)
+    padding: 0
+    flex: none
+
+    & > *
+      flex: none
+
+    &.small
+      width: var(--cui-control-height-small)
+
+
+  &.pill
+    border-radius: 500px
+
+  &.not-pill
+    border-radius: 0
+
+  &.fill
+    width: 100%
+
+  //& + .cui-button
+  //  margin-left: var(--cui-margin-small)
+
+  &.small
+    padding: 0 var(--cui-margin-small)
+    height: var(--cui-control-height-small)
+    font-size: .8rem
+    line-height: calc(var(--cui-control-height-small) - (var(--cui-border-width) * 2))
+
+  &.large
+    padding: 0 var(--cui-margin)
+    height: var(--cui-control-height-large)
+    font-size: 1rem
+    line-height: calc(var(--cui-control-height-large) - (var(--cui-border-width) * 2))
+
+  &:disabled
+    border-color: var(--cui-color-border)
+    background-color: transparent
+    color: var(--cui-color-text-muted)
+
+
+  &:not(:disabled)
+    color: var(--cui-color-text)
+    transition: all .2s ease
+
+    &:hover,
+    &:focus,
+    &:active
+      text-decoration: none
+      border-color: var(--cui-color-border)
+      background-color: var(--cui-color-backgroung)
+      color: var(--cui-color-white)
+
+    &.default
+      border-color: var(--cui-color-border)
+      background-color: transparent
+      color: var(--cui-color-text)
+
+      &:hover,
+      &:focus,
+      &:active
+        border-color: var(--cui-color-info)
+        background-color: transparent
+        color: var(--cui-color-info)
+
+    &.info
+      border-color: var(--cui-color-info-500)
+      background-color: var(--cui-color-info-500)
+      color: var(--cui-color-info-100)
+
+      &:hover,
+      &:focus,
+      &:active
+        color: var(--cui-color-info-100)
+        border-color: var(--cui-color-info-600)
+        background-color: var(--cui-color-info-600)
+
+    &.success
+      border-color: var(--cui-color-success-500)
+      background-color: var(--cui-color-success-500)
+      color: var(--cui-color-success-100)
+
+      &:hover,
+      &:focus,
+      &:active
+        color: var(--cui-color-success-100)
+        border-color: var(--cui-color-success-600)
+        background-color: var(--cui-color-success-600)
+
+    &.warning
+      border-color: var(--cui-color-warning-500)
+      background-color: var(--cui-color-warning-500)
+      color: var(--cui-color-warning-100)
+
+      &:hover,
+      &:focus,
+      &:active
+        border-color: var(--cui-color-warning-600)
+        background-color: var(--cui-color-warning-600)
+        color: var(--cui-color-warning-100)
+
+    &.danger
+      border-color: var(--cui-color-danger-500)
+      background-color: var(--cui-color-danger-500)
+      color: var(--cui-color-danger-100)
+
+      &:hover,
+      &:focus,
+      &:active
+        color: var(--cui-color-danger-100)
+        border-color: var(--cui-color-danger-600)
+        background-color: var(--cui-color-danger-600)
+
+.cui-button-group
+  & > *
+    border-radius: 0
+
+  &:not(.not-pill)
+    & > *
+      &:first-child
+        border-radius: var(--cui-border-radius) 0 0 var(--cui-border-radius)
+
+      &:last-child
+        border-radius: 0 var(--cui-border-radius) var(--cui-border-radius) 0
+  &.pill
+    & > *
+      &:first-child
+        border-radius: 500px 0 0 500px
+
+      &:last-child
+        border-radius: 0 500px 500px 0

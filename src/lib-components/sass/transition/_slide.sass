@@ -1,0 +1,71 @@
+/** fade
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+.fade-enter-active, .fade-leave-active
+  transition: opacity .3s ease-in-out
+
+/** side-menu
+.menu-enter, .menu-leave-to
+  transition-property: transform, opacity
+  opacity: 0
+  transform: translateX(-100%)
+
+.menu-enter-active, .menu-leave-active
+  transition: .3s ease-in-out
+  transition-property: transform, opacity
+
+
+/** slide-left
+.slide-left-enter, .slide-left-leave-to
+  transition-property: transform, opacity
+  opacity: 0
+  transform: translateX(10%)
+
+.slide-left-enter-active, .slide-left-leave-active
+  transition-property: transform, opacity
+  transition: all .3s ease-in-out
+
+
+/** slide-right
+.slide-right-enter, .slide-right-leave-to
+  transition-property: transform, opacity
+  opacity: 0
+  transform: translateX(-10%)
+
+.slide-right-enter-active, .slide-right-leave-active
+  transition-property: transform, opacity
+  transition: all .3s ease-in-out
+
+/** slide-right-full
+.slide-right-full-enter, .slide-right-full-leave-to
+  transition-property: transform, opacity
+  //opacity: 0
+  transform: translateX(100%)
+
+.slide-right-full-enter-active, .slide-right-full-leave-active
+  transition-property: transform, opacity
+  transition: transform .3s ease-in-out
+
+
+/** slide-top
+.slide-top-enter, .slide-top-leave-to
+  transition-property: transform, opacity
+  opacity: 0
+  transform-origin: top center
+  transform: translateY(10%)
+
+.slide-top-enter-active, .slide-top-leave-active
+  transition-property: transform, opacity
+  transition: all .3s ease-in-out
+
+
+/** slide-bottom
+.slide-bottom-enter, .slide-bottom-leave-to
+  transition-property: transform, opacity
+  opacity: 0
+  transform: translateY(-10%)
+
+.slide-bottom-enter-active, .slide-bottom-leave-active
+  transition-property: transform, opacity
+  transition: all .3s ease-in-out

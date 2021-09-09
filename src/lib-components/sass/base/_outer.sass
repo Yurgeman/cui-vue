@@ -1,0 +1,15 @@
+@import "../var"
+@import "../mixins"
+
+.cui-outer
+  width: 100%
+  @include vh-100
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center center
+
+  &__bgr
+    background-color: var(--cui-color-backgroung)
+
+  &__bgr-muted
+    background-color: var(--cui-color-backgroung-muted)

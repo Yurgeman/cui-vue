@@ -1,0 +1,18 @@
+@import "../../mixins"
+@import "../../var"
+
+.cui-fieldset
+  border: none
+  margin: 0
+  font-size: 1.2rem
+  color: var(--cui-color-text-muted)
+  padding: var(--cui-margin-large) 0 0 0
+
+  &__legend
+    @include ellipsis
+    font-weight: bold
+    text-align: center
+
+  &__fields
+    &:not(:last-child)
+      margin-bottom: var(--cui-margin)

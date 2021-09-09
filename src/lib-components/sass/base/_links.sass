@@ -1,0 +1,13 @@
+@import "../var"
+@import "../mixins"
+
+a
+  color: var(--cui-color-link)
+  cursor: pointer
+  text-decoration: none
+
+  &:active,
+  &:hover
+    color: var(--cui-color-link-hover)
+    text-decoration: underline
+    outline: none

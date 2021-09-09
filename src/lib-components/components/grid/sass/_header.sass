@@ -1,0 +1,46 @@
+@import "var"
+
+.cui-grid-header
+  background-color: var(--cui-color-primary)
+  color: var(--cui-color-primary-100)
+  padding: var(--cui-margin-small)
+  line-height: 1.1
+  font-size: .8rem
+  font-weight: bold
+  display: flex
+  align-items: flex-end
+  position: sticky
+  top: 0
+  gap: var(--cui-margin-xsmall)
+  z-index: 10
+
+  &__resize
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    width: 5px
+    background-color: var(--cui-color-success)
+    cursor: col-resize
+    opacity: .3
+
+    &:hover
+      opacity: 1
+
+  &--resizable
+    padding-right: + 5
+
+  &__side
+    flex: none
+
+  &__label
+    flex: 1
+    min-width: 0
+
+    &--hover
+      color: var(--cui-color-warnig)
+
+//.cui-grid-header
+//  &:hover
+//    .cui-grid-header__resize
+//      display: block

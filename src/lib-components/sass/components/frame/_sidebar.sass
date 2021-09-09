@@ -1,0 +1,60 @@
+@import "../../mixins/mixins"
+@import "../../var"
+
+.cui-frame-sidebar
+  grid-area: side
+  background-color: var(--cui-color-base)
+  width: 240px
+  color: var(--cui-color-invers)
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  transition: width .3s ease-in-out
+
+  &.closed
+    width: var(--cui-panel-size)
+
+    .cui-frame-sidebar__logo
+      margin: var(--cui-margin-small)
+
+  &__top
+    overflow: hidden
+    flex: none
+    height: var(--cui-panel-size)
+    border-bottom: border()
+    display: flex
+
+  &__logo,
+  &__close
+    text-decoration: none
+    color: var(--cui-color-primary-200)
+
+    &:hover
+      color: var(--cui-color-warning-500)
+
+  &__logo
+    margin: var(--cui-margin-small) var(--cui-margin)
+    flex: 1
+    min-width: 0
+    background-size: contain
+    background: no-repeat left center
+    cursor: pointer
+    @include transitionAll
+
+  &__close
+    width: var(--cui-panel-size)
+    flex: none
+    @include flex-center
+    cursor: pointer
+
+
+  &__middle
+    flex: 1
+    min-width: 200px
+    overflow-x: hidden
+    overflow-y: auto
+
+  &__bottom
+    overflow: hidden
+    flex: none
+    border-top: border()

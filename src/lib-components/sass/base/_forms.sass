@@ -1,0 +1,57 @@
+@import "../var"
+
+label
+  font-size: .9rem
+  font-weight: bold
+
+input,
+textarea,
+.content-editable
+  color: var(--cui-color-text)
+
+  &:focus
+    color: var(--cui-color-info)
+
+  &::selection
+    background-color: var(--cui-color-info)
+    color: var(--cui-color-invers)
+
+input,
+textarea,
+.content-editable
+  &:-webkit-autofill
+    transition: color 600000s 0s
+    -webkit-box-shadow: 0 0 0px 1000px var(--cui-color-backgroung) inset
+    //color: var(--cui-color-text) !important
+    &:focus
+      -webkit-box-shadow: 0 0 0px 1000px var(--cui-color-backgroung-muted) inset
+
+  &::-moz-placeholder,
+  &::-ms-input-placeholder
+    opacity: 1
+    color: var(--cui-color-text-muted) !important
+    font-weight: normal
+
+  &::placeholder
+    color: var(--cui-color-text-muted)
+    font-weight: normal
+
+input,
+.cui-input
+  height: var(--cui-control-height)
+  padding: 0 var(--cui-margin-small)
+
+.cui-input
+  border: var(--cui-border-width) solid var(--cui-color-border)
+  border-radius: var(--cui-border-radius)
+  height: var(--cui-control-height)
+  padding: 0 var(--cui-margin-small)
+
+  &.pill
+    border-radius: 500px
+
+  &:focus,
+  &:active
+    background-color: var(--cui-color-backgroung-muted)
+    color: var(--cui-color-info)
+    border-color: var(--cui-color-info)

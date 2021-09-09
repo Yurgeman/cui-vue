@@ -1,0 +1,25 @@
+@import "../var"
+
+.cui-badge
+  display: inline-block
+  padding: 0 var(--cui-margin-small)
+  border-radius: $border-radius * 0.5
+  font-size: .85em
+  font-weight: bold
+  background-color: var(--cui-color-border)
+
+  &.warning
+    background-color: $color-warning-500
+    color: $color-primary-800
+
+  &.danger
+    background-color: $color-danger-500
+    color: $color-inverse
+
+  &.success
+    background-color: $color-success-500
+    color: $color-inverse
+
+  &.info
+    background-color: $color-info-500
+    color: $color-inverse

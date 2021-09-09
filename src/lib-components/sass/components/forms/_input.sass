@@ -1,0 +1,42 @@
+@import "../../mixins"
+@import "../../var"
+
+.cui-field-input
+  width: 100%
+  display: flex
+  gap: var(--cui-margin-small)
+  flex-direction: column
+
+  &--inline
+    flex-direction: row
+    align-items: center
+    gap: var(--cui-margin)
+
+  &__label
+    color: var(--cui-color-text)
+    display: flex
+    gap: var(--cui-margin-xsmall)
+
+  &__label-required
+    color: var(--cui-color-danger)
+
+  &__field
+    border-bottom: var(--cui-border-width) solid var(--cui-color-border)
+
+    &:not(:focus)
+      padding-right: 0
+      padding-left: 0
+
+    &:focus
+      background--color: var(--cui-color-backgroung-muted)
+      border-bottom-color: var(--cui-color-info)
+
+    &--valid
+      border-bottom-color: var(--cui-color-success) !important
+
+  &--inline &__label
+    flex: none
+    max-width: 40%
+
+  &--inline &__field
+    text-align: right
